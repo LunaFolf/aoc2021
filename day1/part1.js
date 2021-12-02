@@ -1,7 +1,7 @@
 nums = document.getElementsByTagName("pre")[0].innerText.split("\n").filter(n => n.length).map(n => Number(n));
 
 lastnum = null;
-larger = 0;
+largerThan = 0;
 
 nums.forEach(num => {
   if (lastnum === null) {
@@ -9,13 +9,11 @@ nums.forEach(num => {
     return false;
   }
 
-  console.log(num, lastnum, num > lastnum);
-
-  if (num > lastnum) larger += 1;
+  if (num > lastnum) largerThan += 1;
   lastnum = num;
 });
 
 console.log({
   lastnum,
-  larger
+  largerThan
 });

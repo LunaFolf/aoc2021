@@ -13,11 +13,9 @@ movements.forEach(move => {
     depth += aim * move.units
   }
   else if (move.direction == "up") {
-    // depth -= move.units
     aim -= move.units
   }
   else if (move.direction == "down") {
-    // depth += move.units
     aim += move.units
   }
 })
