@@ -5,14 +5,14 @@ ratings = { oxygen: null, carbon: null };
 const bitCriterias = [
   {
     name: 'oxygen',
-    filter: (filterBinaries, positiveBits, negativeBits) => {
+    filter (filterBinaries, positiveBits, negativeBits) {
       const positive = (positiveBits > negativeBits) || (positiveBits === negativeBits)
       return filterBinaries.filter(binary => binary[i] === (positive ? "1" : "0"))
     }
   },
   {
     name: 'carbon',
-    filter: (filterBinaries, positiveBits, negativeBits) => {
+    filter (filterBinaries, positiveBits, negativeBits) {
       const negative = (positiveBits > negativeBits) || (positiveBits === negativeBits)
       return filterBinaries.filter(binary => binary[i] === (negative ? "0" : "1"))
     }

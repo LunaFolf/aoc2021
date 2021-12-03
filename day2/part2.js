@@ -12,12 +12,8 @@ movements.forEach(move => {
     horizontal += move.units
     depth += aim * move.units
   }
-  else if (move.direction == "up") {
-    aim -= move.units
-  }
-  else if (move.direction == "down") {
-    aim += move.units
-  }
+  else if (move.direction == "up") aim -= move.units
+  else if (move.direction == "down") aim += move.units
 })
 
 console.log({
