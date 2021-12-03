@@ -7,7 +7,7 @@ horizontal = 0
 depth = 0
 
 movements.forEach(move => {
-  if (move.direction == "forward") depth += move.units
+  if (move.direction == "forward") horizontal += move.units
   else if (move.direction == "up") depth -= move.units
   else if (move.direction == "down") depth += move.units
 })
