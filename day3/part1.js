@@ -3,11 +3,9 @@ binaries = document.getElementsByTagName("pre")[0].innerText.split("\n").filter(
 gammaRate = '';
 epsilonRate = '';
 
-function convertBinaryToDecimal(binary) {
-    return parseInt(binary, 2);
-}
-
 for (i = 0; i < binaries[0].length; i++) {
+
+  // Find most common bit, for current column.
   let positiveBits = 0;
   let negativeBits = 0;
   binaries.forEach(binary => {
@@ -18,8 +16,8 @@ for (i = 0; i < binaries[0].length; i++) {
     }
   })
 
-  console.log(`${i}: ${positiveBits} positive, ${negativeBits} negative`);
-
+  // If most common bit is positive add positive bit to gammaRate and negative bit to epsilonRate.
+  // Otherwise add negative bit to gammaRate and positive bit to epsilonRate.
   if (positiveBits > negativeBits) {
     gammaRate += "1";
     epsilonRate += "0";
@@ -30,7 +28,7 @@ for (i = 0; i < binaries[0].length; i++) {
 }
 
 console.log({
-  gammaRate: convertBinaryToDecimal(gammaRate),
-  epsilonRate: convertBinaryToDecimal(epsilonRate),
-  powerConsumption: convertBinaryToDecimal(gammaRate) * convertBinaryToDecimal(epsilonRate)
+  gammaRate: parseInt(gammaRate, 2),
+  epsilonRate: parseInt(epsilonRate, 2),
+  powerConsumption: parseInt(gammaRate, 2) * parseInt(epsilonRate, 2)
 })
